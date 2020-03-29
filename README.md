@@ -1,5 +1,5 @@
 # **Ecommerce** 
-> *Home page*
+> **Home page**
 > ## Header ##
 >> -  Logo .
 >> -  Field with search icon button .
