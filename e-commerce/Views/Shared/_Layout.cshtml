@@ -6,39 +6,207 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="wrapper">
+
+        <header>
+            <div class="row">
+                <div class="col-7 col-md-8">
+                    <div class="container pt-2">
+                        <img src="~/imagess/logo.PNG" alt="logo" class="logo">
+                        <p id="logo-text">
+                            Online shopping !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-5 col-md-4">
+                    <div id="icons">
+                        <ul id="social-media">
+
+                            <li>
+                                <img src="~/imagess/rss.png" alt="rss">
+                            </li>
+                            <li>
+                                <img src="~/imagess/linkedin.png" alt="linkedin">
+                            </li>
+                            <li>
+                                <img src="~/imagess/dribble.png" alt="dribble">
+
+                            </li>
+                            <li>
+                                <img src="~/imagess/facebook.png" alt="facebook">
+                            </li>
+                            <li>
+                                <img src="~/imagess/twitter.png" alt="twitter">
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p id="contact">
+                            Contact Phone: +48 880 440 110
+                        </p>
+                    </div>
+                    <div>
+
+                        <form class="form-inline" action="/action_page.php">
+                            <input type="text" placeholder="Search">
+                            <button type="submit" title="Search">
+                                <i class="fa fa-fw fa-search color"></i>
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+                <div id="nav-selector" class="form-group">
+
+                    <select class="form-control" id="select">
+                        <option>Menu</option>
+                        <option>Home</option>
+                        <option>Shop</option>
+                        <option>Blog</option>
+                    </select>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+        </header>
+
+        <nav class="navbar navbar-expand-sm navbar-fixed-top bg-dark navbar-dark">
+            
+            <ul class="navbar-nav">
+                <li class="">
+
+                    <a class="nav-icon-text active-nav" href=@Html.ActionLink("Home", "Index", "Home")>
+
+                    </a>
+                </li>
+
+                <li class="">
+
+                    <a class="nav-icon-text" href=@Html.ActionLink("About", "About", "Home")>
+
+                    </a>
+                </li>
+
+
+                <li class="">
+
+                    <a class="nav-icon-text" href=@Html.ActionLink("shop", "shop", "shop")>
+
+                    </a>
+                </li>
+
+                <li class="dropdown">
+
+                    <a class="nav-icon-text" href=@Html.ActionLink("Contact", "Contact", "Home")>
+
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            
                 @Html.Partial("_LoginPartial")
-            </div>
+            
+                
+        </nav>
+
+        <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+         <ul class="navbar-nav">
+             
+
+             <li class="dropdown">
+                 <a class="nav-icon-text" href="#" data-toggle="dropdown">
+                     <i class="fa fa-fw fa-shopping-cart"></i>
+                     shop
+                 </a>
+                 <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">Link 1</a>
+                     <a class="dropdown-item" href="#">Link 2</a>
+
+                 </div>
+
+             </li>
+             <li class="dropdown">
+                 <a class="nav-icon-text" href="#" data-toggle="dropdown">
+                     <i class="fa fa-fw fa-pencil"></i>
+                     blog
+                 </a>
+                 <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">Link 1</a>
+                     <a class="dropdown-item" href="#">Link 2</a>
+
+                 </div>
+
+             </li>
+             <li>
+                 <a class="nav-icon-text" href="#">
+                     <i class="fa fa-fw fa-envelope-o"></i>
+                     contact
+                 </a>
+             </li>
+         </ul>
+     </nav>
+
+     -->
+
+
+
+
+
+
+        <div class="">
+            @RenderBody()
+            <hr />
+            <footer class="">
+                <div id="lowerfooter" class="pt-3">
+                    <div class="row">
+                        <div class="col-12 col-md-9">
+                            <p>
+                                © Copyright 2015 by <a href="#" id="copyright">OS</a> . All Rights Reserved.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <ul class="row">
+                                <li>
+                                    <a href="#">FAQ's</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sitemap</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+
+
+
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        <script src="~/Scripts/javascript.js"></script>
 </body>
 </html>
