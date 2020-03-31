@@ -6,11 +6,15 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/owl.carousel.min.css")
+    @Styles.Render("~/Content/owl.theme.default.min.css")
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">]
+
     @*<link rel="stylesheet" type="text/css" href="~/Content/home.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
 
 
 
@@ -79,33 +83,33 @@
         </header>
 
         <nav class="navbar navbar-expand-sm navbar-fixed-top bg-dark navbar-dark">
-            
+
             <ul class="navbar-nav">
-                <li class="">
+                <li id="home">
 
-                   @Html.ActionLink("Home", "Index", "Home",new object { }, new { @class ="nav-icon-text active-nav"})>
-    
+                    @Html.ActionLink("Home", "Index", "Home", new object { }, new { @class = "nav-icon-text active-nav" })
+
                 </li>
 
                 <li class="">
 
-                  @Html.ActionLink("About", "About", "Home", new object { }, new { @class = "nav-icon-text" })>
+                    @Html.ActionLink("About", "About", "Home", new object { }, new { @class = "nav-icon-text" })
 
-                  
+
                 </li>
 
 
                 <li class="">
-                @Html.ActionLink("shop", "shop", "shop", new object { }, new { @class ="nav-icon-text"})>
+                    @Html.ActionLink("shop", "shop", "shop", new object { }, new { @class = "nav-icon-text" })
 
-                 
+
                 </li>
 
                 <li class="dropdown">
 
-                   @Html.ActionLink("Contact", "Contact", "Home", new object { }, new { @class = "nav-icon-text" })>
+                    @Html.ActionLink("Contact", "Contact", "Home", new object { }, new { @class = "nav-icon-text" })
 
-                  
+
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Link 1</a>
                         <a class="dropdown-item" href="#">Link 2</a>
@@ -116,58 +120,51 @@
 
 
             </ul>
-            
-                @Html.Partial("_LoginPartial")
-            
-                
+
+            @Html.Partial("_LoginPartial")
+
+
         </nav>
 
         <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
 
-         <ul class="navbar-nav">
-             
-
-             <li class="dropdown">
-                 <a class="nav-icon-text" href="#" data-toggle="dropdown">
-                     <i class="fa fa-fw fa-shopping-cart"></i>
-                     shop
-                 </a>
-                 <div class="dropdown-menu">
-                     <a class="dropdown-item" href="#">Link 1</a>
-                     <a class="dropdown-item" href="#">Link 2</a>
-
-                 </div>
-
-             </li>
-             <li class="dropdown">
-                 <a class="nav-icon-text" href="#" data-toggle="dropdown">
-                     <i class="fa fa-fw fa-pencil"></i>
-                     blog
-                 </a>
-                 <div class="dropdown-menu">
-                     <a class="dropdown-item" href="#">Link 1</a>
-                     <a class="dropdown-item" href="#">Link 2</a>
-
-                 </div>
-
-             </li>
-             <li>
-                 <a class="nav-icon-text" href="#">
-                     <i class="fa fa-fw fa-envelope-o"></i>
-                     contact
-                 </a>
-             </li>
-         </ul>
-     </nav>
-
-     -->
+                <li class="dropdown">
+                    <a class="nav-icon-text" href="#" data-toggle="dropdown">
+                        <i class="fa fa-fw fa-shopping-cart"></i>
+                        shop
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-icon-text" href="#" data-toggle="dropdown">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        blog
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-icon-text" href="#">
+                        <i class="fa fa-fw fa-envelope-o"></i>
+                        contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        -->
 
 
 
 
 
 
-        <div class="container body-content">
+        <div class="body-content">
             @RenderBody()
             <hr />
             <footer class="">
@@ -202,10 +199,13 @@
     </div>
 
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-        @Scripts.Render("~/bundles/javascript")
-       @* <script src="~/Scripts/javascript.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/javascript")
+
+    @Scripts.Render("~/Scripts/owl.carousel.min.js")
+    @Scripts.Render("~/Scripts/javascript.js")
+    @* <script src="~/Scripts/javascript.js"></script>*@
 </body>
 </html>

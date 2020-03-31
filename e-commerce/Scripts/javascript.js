@@ -13,10 +13,10 @@
             items: 1
         },
         700: {
-            items: 3
+            items: 2
         },
         1020: {
-            items: 4
+            items: 3
         }
     }
 
